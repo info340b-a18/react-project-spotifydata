@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Chaitanya Gangavarapu">
+    <meta name="description" content="Project Proposal for Info 340">
+    <title>Music Web App Project Proposal</title>
+    <link rel="icon" type="image/png" href="img/spotify.png">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">  
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="index.js"></script>
+</head>
+<body>
+    <div class="flex-container">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
+            <a class="navbar-brand" href="index.html">Spotify Web App</a>
+            <div class="navbar-nav" id="navlinks">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Music Suggestions</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="playlist.html">Playlist Organizer</a>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="#further-link">Further Links</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick="authorize()" >Login</a>
+                    </li>  
+                </ul>
+            </div> 
+        </nav>
+        <div class="jumbotron">
+            <div class="container-fluid">
+                <img src="img/spotify.png"/>
+                <h1>Spotify Web App</h1>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                    <div class="col-xl-5 spotify-img">
+                        <img class="img-fluid" src="img/spotify-music.jpg">
+                    </div>
+                    <div class="
+                    col-xl-7 overview">
+                        <h2>Topic Overview</h2>
+                        <p>
+                            The topic domain I’m most interested in pursuing is music. I really would like to do something related to someone’s Spotify user history whether, it would be like the memories function on Snapchat or a web app for suggesting new music. 
+                            I feel like there are a lot of options that you can get into with this domain and its something I find really interesting.
+                            Additionally, there are a lot of possible music api's that can be used here whether that be Spotify or something else. It would be very effective to combine a few of these into a web app.
+                        </p>
+                        <p>
+                            The creation of apps in this space could be really beneficial, 
+                            because almost everyone listens to some sort of music and I’m sure people would be able to benefit from any additional music or any insights that can be gained from their music history. 
+                            Right now there are some ways to get new music selections, but I would like to further customize this process by allowing the user of the app to input any information for the search. From genre, to artists, I would like to use the users Spotify history if possible as well.
+                        </p>
+                    </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row Applications">
+                    <h2>Applications</h2>
+                    <ul>
+                        <div class="col-sm">
+                            <h3>
+                                Music Suggestions
+                            </h3>
+                            <p>
+                                This section will allow you to login via Spotify and enter certain search queries and preferences. 
+                                This combined with previous Spotify listening history, will curate some new music suggestions for you in the form of a playlist.
+                            </p>
+                        </div>
+                        <div class="col-sm">
+                            <h3>
+                                Playlist Organizer
+                            </h3>
+                            <p>
+                                This section will allow you to login once again via Spotify and have all your playlists displayed on the side.
+                                From here you can click on any playlist you want and further break this playlist down by genre, author, and any other
+                                tags that you may specify.
+                            </p>
+                            
+                        </div>
+                    </ul>
+            </div>
+        </div>
+        <div>
+            <section class="further-links" id="further-link">
+                <h2 class="card-title">Further Links and Resources</h2>
+                <li>
+                    <a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>
+                </li>
+                <li>
+                    <a href="https://developer.spotify.com/community/showcase/">Showcase of Spotify Web App Ideas</a>
+                </li>
+                <li>
+                    <a href="https://musicmachinery.com/music-apis/">Different Useful Music Api's Aside From Spotify</a>
+                </li>
+            </section>
+        </div>
+        <footer>
+            <p>Posted by: Chai Gangavarapu</p>
+            <p>Contact information: <a href="mailto:chaitanya.gangavarapu@gmail.com">
+            chaitanya.gangavarapu@gmail.com</a>.</p>
+        </footer>
+    </div>
+</body>
+</html>

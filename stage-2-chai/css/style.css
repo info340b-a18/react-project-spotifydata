@@ -1,0 +1,75 @@
+html {
+    box-sizing: border-box;
+}
+.navbar a:hover {
+    background-color: #84bd00;
+}
+
+nav {
+    background: linear-gradient(to bottom,black, black);
+
+}
+body {
+    color: white;
+    opacity: .75;
+    background: linear-gradient(to bottom,black,  #212121)
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron h1{
+    display: inline;
+}
+
+.jumbotron {
+   background: linear-gradient(to bottom,black, black)
+}
+
+.Applications h2, .further-links h2 {
+    font-style: italic;
+    margin-left: 30px;
+}
+
+.further-links li {
+    margin-left: 30px;
+}
+
+.further-links a:hover {
+    color: #BFEFFF;
+}
+
+footer {
+    margin-left: 30px;
+}
+
+.sidebar {
+    height: 100%; /* Full-height: remove this if you want "auto" height */
+    width: 160px; /* Set the width of the sidebar */
+    position: fixed; /* Fixed Sidebar (stay in place on scroll) */
+    z-index: 1; /* Stay on top */
+    top: 0; /* Stay at the top */
+    left: 0;
+    background-color: #111; /* Black */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    padding-top: 20px;
+}
+
+.sidebar a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 25px;
+    color: white;
+    display: block;
+}
+
+.sidebar a:hover {
+    color: #84bd00;
+}
+
+.main-container {
+    padding-left: 160px;
+}
+
