@@ -1,0 +1,106 @@
+Ashishs-MacBook-Pro:project-ashisrani ashisrani$ jest
+ FAIL  ./project.spec.js
+  Used test-driven development
+    ✕ Used Jest to pre-test code, saved in `pretest.txt` (3ms)
+  Source code is valid
+    ✓ HTML validates without errors (9ms)
+    ✓ CSS validates without errors (70ms)
+  Has required HTML
+    ✕ Specifies charset (8ms)
+    ✕ Includes page title (2ms)
+    ✕ Includes author metadata (1ms)
+    ✕ Has a top-level heading (1ms)
+
+  ● Used test-driven development › Used Jest to pre-test code, saved in `pretest.txt`
+
+    ENOENT: no such file or directory, open '/Users/ashisrani/Documents/INFO340/in-class/project-ashisrani/pretest.txt'
+
+      16 |   test('Used Jest to pre-test code, saved in `pretest.txt`', () => {
+      17 |     const path = __dirname + '/pretest.txt'
+    > 18 |     const pretest = fs.readFileSync(path, 'utf-8');
+         |                        ^
+      19 |     expect(pretest);
+      20 |   })
+      21 | })
+
+      at Object.readFileSync (project.spec.js:18:24)
+
+  ● Has required HTML › Specifies charset
+
+    expect(received).toBe(expected) // Object.is equality
+
+    Expected: 1
+    Received: 0
+
+      52 |
+      53 |   test('Specifies charset', () => {
+    > 54 |     expect($('head > meta[charset]').length).toBe(1); //has 1 tag
+         |                                              ^
+      55 |   })
+      56 |
+      57 |   test('Includes page title', () => {
+
+      at Object.toBe (project.spec.js:54:46)
+
+  ● Has required HTML › Includes page title
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      1
+    Received:
+      0
+
+      57 |   test('Includes page title', () => {
+      58 |     let title = $('head > title');
+    > 59 |     expect(title.length).toEqual(1); //has 1 tag
+         |                          ^
+      60 |     expect(title.text().length).toBeGreaterThan(0); //has content
+      61 |     expect(title.text()).not.toEqual("My Page Title");
+      62 |   })
+
+      at Object.toEqual (project.spec.js:59:26)
+
+  ● Has required HTML › Includes author metadata
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      1
+    Received:
+      0
+
+      64 |   test('Includes author metadata', () => {
+      65 |     let author = $('head > meta[name="author"]')
+    > 66 |     expect(author.length).toEqual(1); //has 1 tag
+         |                           ^
+      67 |     expect(author.attr('content').length).toBeGreaterThan(0); //has content
+      68 |     expect(author.attr('content')).not.toEqual("your name");
+      69 |   })
+
+      at Object.toEqual (project.spec.js:66:27)
+
+  ● Has required HTML › Has a top-level heading
+
+    expect(received).toEqual(expected)
+
+    Expected value to equal:
+      1
+    Received:
+      0
+
+      71 |   test('Has a top-level heading', () => {
+      72 |     let h1 = $('h1');
+    > 73 |     expect(h1.length).toEqual(1); //has 1 tag
+         |                       ^
+      74 |     expect(h1.text()).toBeTruthy(); //contains text
+      75 |   })
+      76 | })
+
+      at Object.toEqual (project.spec.js:73:23)
+
+Test Suites: 1 failed, 1 total
+Tests:       5 failed, 2 passed, 7 total
+Snapshots:   0 total
+Time:        3.612s
+Ran all test suites.

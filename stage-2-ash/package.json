@@ -1,0 +1,22 @@
+{
+  "name": "final-project",
+  "version": "0.1.0",
+  "private": true,
+  "description": "",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "inline-css": "^2.4.0",
+    "jest-style-matchers": "^0.1.1"
+  },
+  "dependencies": {
+    "ajax": "0.0.4",
+    "chart.js": "^2.7.3",
+    "jest": "^23.6.0",
+    "jquery": "^3.3.1"
+  }
+}

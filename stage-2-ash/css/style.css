@@ -1,0 +1,103 @@
+
+
+body {
+    color: #535353;
+    font-family: 'Open Sans', sans-serif;
+    margin: 8px;
+    margin-left: 30px;
+
+}
+
+.topnav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%; 
+    background-color: #d3d3d3; 
+    padding: .5rem; 
+}
+.topnav a {
+    color: green;
+    display: inline;
+    margin-right: 5rem;
+}
+.topnav .searchBox {
+    color: green;
+    display: inline;
+    margin-right: 5rem;
+}
+
+.topnav a:hover {
+    background-color: black;
+}
+
+ul {
+    margin-left: 30px;
+}
+h1 {
+    padding-top: 1.2rem;
+}
+
+.homeimg {
+    width: 50%; 
+    height:300px;
+}
+
+.row {
+    display: flex;
+    padding-top: 1rem;
+    flex-shrink: inherit;
+    box-shadow: 1px 1px;
+   
+}
+  
+.column {
+    display:flex;
+    max-width: 100%;
+    height: auto;
+    flex: 50%;
+    padding-right: 5px;
+
+}
+.figure-caption {
+    font-size: 18px;
+    color: #6AE368; 
+}
+  
+@media (min-width: 598px) { 
+    .row {
+     max-width: 100%;
+    }
+    .column {
+        max-width: 100%;
+    }
+}
+
+.block {
+    margin-left: 30px;
+}
+
+#photos {
+
+    line-height: 0;
+     
+    -webkit-column-count: 5;
+    -webkit-column-gap:   0px;
+    -moz-column-count:    5;
+    -moz-column-gap:      0px;
+    column-count:         5;
+    column-gap:           0px;  
+  }
+  
+  #photos img {  
+    width: 100%;
+    height: auto;
+  }
+  
+.page3 {
+   background: linear-gradient(#e66465, #9198e5);
+  }
+
+  p {
+      margin-left: 30px;
+  }
