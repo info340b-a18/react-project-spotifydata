@@ -81,7 +81,7 @@ export class Nav extends Component {
   }
 
   authorize() {
-    var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=https://info340b-a18.github.io/react-spotifydata/";
+    var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=https://info340b-a18.github.io/react-project-spotifydata/";
     window.location = loginQuery;
   }
 }
