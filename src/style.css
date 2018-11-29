@@ -1,0 +1,52 @@
+html {
+    box-sizing: border-box;
+}
+.navbar a:hover {
+    background-color: #84bd00;
+}
+
+nav {
+    background: linear-gradient(to bottom,black, black);
+
+}
+
+
+#root {
+    color: white;
+    background: linear-gradient(to bottom,black,  #212121)
+}
+
+body {
+    border: 1px solid transparent;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.jumbotron h1{
+    display: inline;
+}
+
+.jumbotron {
+   background: linear-gradient(to bottom,black, black)
+}
+
+.Applications h2, .further-links h2 {
+    font-style: italic;
+    margin-left: 30px;
+}
+
+.further-links li {
+    margin-left: 30px;
+}
+
+.further-links a:hover {
+    color: #BFEFFF;
+}
+
+footer {
+    margin-left: 30px;
+}
+
