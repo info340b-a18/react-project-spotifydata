@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Ashish Israni" />
+    <meta name="description" content=
+    "Information about my proposed spotify web app" />
+    <meta name="viewport" content=
+    "width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title class="jumbotron display-4">
+      Spotify Web App Proposal
+    </title>
+    <link rel="icon" type="image/png" href="img/headphone.png" />
+    
+    <link rel="stylesheet" href=
+    "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    type="text/css" />
+
+    <link rel="stylesheet" href=
+    "https://use.fontawesome.com/releases/v5.4.1/css/all.css"
+    integrity=
+    "sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz"
+    crossorigin="anonymous" type="text/css" />
+    <link rel="stylesheet" href="css/style.css" type="text/css" />
+  </head>
+  <body>
+    <div class="topnav">
+      <a href="#home">Home</a> <a href="page2.html">Your Listening
+      Analyzed</a> <a href="page3.html">Top Artists</a>
+      <a href="#links">Additional Links</a>
+      <div class="searchBox" role="search">
+        <input type="text" placeholder="Search..." />
+      </div>
+    </div>
+    <h1 id="home">
+      Spotify Web App Proposal
+    </h1>
+    <h2>
+      Topic Overview
+    </h2>
+    <p id="block">
+      The question of interest here is about the overall listening
+      habits of users on spotify. People use spotify as their main
+      music source every single day and listen to thousands of
+      different songs, but currently there is not a clear way to
+      see data about the music you listen to. I would like to
+      create an application that synthesizes data about the
+      listening habits of users, and then provides a summary
+      detailing their music listening habits over time. The summary
+      will include most listened to genres, songs, time of day of
+      listening, most frequent artists, etc. Synthesizing all of
+      this data will be possible because the API is extremely
+      versatile and allows for a vast range of capabilities. I am
+      looking forward to seeing how my own music listening is
+      broken down.
+    </p>
+    <p>
+      <img src="img/spotifystock.jpg" class="homeimg" />
+    </p>
+    <h2>
+      Potential Applications
+    </h2>
+    <ul>
+      <li>Analyzing Music habits, genres. time of listening, etc.
+      </li>
+      <li>Another potential application idea that could stem from
+      this would be the creation of curated playlists based on
+      listening habits. Though spotify already provides something
+      similar it often does not actually appeal to the music tastes
+      of the consumer, and could be much improved. This process is
+      something that is difficult to carry out, but the algorithm
+      could hopefully look at all genres listened to and create
+      curated playlists that represent the broadness of music
+      tastes people listen to.
+      </li>
+    </ul>
+   
+    <h2 id="links">
+      Links
+    </h2>
+    <ul>
+      <li>
+        <a href=
+        "https://developer.spotify.com/documentation/web-api/">Spotify
+        API Homepage</a>
+      </li>
+      <li>
+        <a href=
+        "https://developer.spotify.com/community/showcase/">Spotify
+        Developer Showcase showing other projects done with the
+        API</a>
+      </li>
+      <li>
+        <a href=
+        "https://medium.com/s/story/spotifys-discover-weekly-how-machine-learning-finds-your-new-music-19a41ab76efe">
+        Blog talking about how curated playlists are built
+        algorithmically</a>
+      </li>
+    </ul>
+    <p>
+      Below are buttons that support this page's interaction! Press login to authenticate your spotify account.
+      From there, press Top to display your top 10 songs. From there you can see the artist and album of each one and 
+      a link to play each song on the spotify web player. None of the buttons will work unless you authenticate your 
+      account first! 
+      Finally, click your top artists to see a graphic of your top 5 artists and how many genres 
+      their music covers. Then navigate to the top artists page on the nav bar to see 
+      your top 15 artists, indexed by their popularity on spotify! 
+    </p>
+    <button type="button" class="btn btn-primary" onclick="authorize()">Login</button>
+    <button type="button" class="btn btn-primary" id="top" >Top 10 Songs</button>
+    <button type="button" class="btn btn-primary" id = "artists">Your Top Artists</button>
+    
+    
+<p id="top-tracks"></p> 
+<div>
+</div>
+<div></div>
+<canvas id="myChart"></canvas>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <script language="JavaScript" type="text/javascript" script src="js/index.js"></script>
+  </body>
+  <footer>
+    Ashish Israni, Informatics Student at UW. aisrani@uw.edu
+  </footer>
+</html>
