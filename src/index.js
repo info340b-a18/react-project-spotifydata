@@ -9,12 +9,12 @@ import 'firebase/auth';
 import 'firebase/database';
 
 var config = {
-    apiKey: "AIzaSyB8INuxC4yT2xMiTK-Ttpe8ODeN0pXprPk",
-    authDomain: "chirper-aisrani.firebaseapp.com",
-    databaseURL: "https://chirper-aisrani.firebaseio.com",
-    projectId: "chirper-aisrani",
-    storageBucket: "chirper-aisrani.appspot.com",
-    messagingSenderId: "631973995734"
+    apiKey: "AIzaSyCMzMlN46xKhXyyHLIbF5gMQiJ5zGopkkM",
+    authDomain: "stage4-info340.firebaseapp.com",
+    databaseURL: "https://stage4-info340.firebaseio.com",
+    projectId: "stage4-info340",
+    storageBucket: "stage4-info340.appspot.com",
+    messagingSenderId: "692235007256"
   };
   //firebase.initializeApp(config);
 
