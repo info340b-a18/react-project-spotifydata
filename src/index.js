@@ -4,7 +4,20 @@ import './index.css';
 import './style.css';
 import App from './App';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import firebase from 'firebase/app';
+import 'firebase/auth'; 
+import 'firebase/database';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+var config = {
+    apiKey: "AIzaSyCMzMlN46xKhXyyHLIbF5gMQiJ5zGopkkM",
+    authDomain: "stage4-info340.firebaseapp.com",
+    databaseURL: "https://stage4-info340.firebaseio.com",
+    projectId: "stage4-info340",
+    storageBucket: "stage4-info340.appspot.com",
+    messagingSenderId: "692235007256"
+  };
+  firebase.initializeApp(config);
+
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 
