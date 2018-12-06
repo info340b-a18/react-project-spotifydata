@@ -33,7 +33,7 @@ class SpotifySongs extends Component {
                 {this.state.songButtonClicked == false &&
                 heading}
                 {this.state.songButtonClicked == true &&
-                <SongChart songChartData={this.songChartData}></SongChart>}
+                <SongChart songChartData={this.songChartData} ></SongChart>}
                 {this.state.songChartPresent == false && this.props.accessToken != undefined &&
                 <Button color='primary' onClick={()=> this.songButtonClick()}>Top Songs</Button>} {' '}
             </div>
@@ -59,11 +59,10 @@ class SpotifySongs extends Component {
 }
 class SongChart extends Component {
     render() {
-        
         let labels = [];
         let ratings = [];
         this.props.songChartData.forEach((song) => {
-            labels.push(song.name)
+            labels.push(song.name + '-' + song.artists[0].name)
             ratings.push(song.popularity)
         });
         var data =  {
@@ -75,14 +74,21 @@ class SongChart extends Component {
                   data: ratings
                 }
               ]
-        }
+        };
+        let options = {
+            events: ['click'],
+            onClick: this.handleClick
+        };
         return (
             <div>
                 <h1>Your Top 10 Songs!</h1>
-                <Bar data={data}/>
+                <Bar data={data} options={options} />
             </div>
-        )
-        
+        )   
+    }
+
+    handleClick(event, elements) {
+        console.log(elements[0]['_view'].label);
     }
 }
 
