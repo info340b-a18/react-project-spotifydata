@@ -4,6 +4,8 @@ import 'react-tabulator/lib/css/tabulator.min.css'; // theme
 import { ReactTabulator } from 'react-tabulator';
 import { Button, Table } from 'reactstrap';
 import {Bar} from 'react-chartjs-2';
+import { element } from 'prop-types';
+import { SimilarTrackDisplay } from './LastFMData';
 
 class SpotifySongs extends Component {
     
@@ -57,12 +59,14 @@ class SpotifySongs extends Component {
     }
 
 }
+
 class SongChart extends Component {
     render() {
+        console.log(this.state);
         let labels = [];
         let ratings = [];
         this.props.songChartData.forEach((song) => {
-            labels.push(song.name + '-' + song.artists[0].name)
+            labels.push(song.name + ' - ' + song.artists[0].name)
             ratings.push(song.popularity)
         });
         var data =  {
@@ -76,21 +80,29 @@ class SongChart extends Component {
               ]
         };
         let options = {
-            events: ['click'],
-            onClick: this.handleClick
+            onClick: this.handleClick,
+            legend: {
+                display: false
+            }
         };
         return (
             <div>
                 <h1>Your Top 10 Songs!</h1>
                 <Bar data={data} options={options} />
+                {this.state ?
+                <SimilarTrackDisplay track={this.state.track} artist={this.state.artist} />
+                : ''}
             </div>
         )   
     }
 
-    handleClick(event, elements) {
-        console.log(elements[0]['_view'].label);
+    handleClick = (event, elements) => {
+        if (elements.length !== 0) {
+            let data = elements[0]['_view'].label.split(' - ');
+            this.setState({track: data[0], artist: data[1]});
+        }
     }
 }
 
 
-export default SpotifySongs
+export default SpotifySongs;

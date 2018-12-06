@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
-import {Treemap} from 'react-vis';
-import '../node_modules/react-vis/dist/style.css';
+// import {Treemap} from 'react-vis';
+// import '../node_modules/react-vis/dist/style.css';
 
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/?method=";
 const API_KEY = "d07648f4e1a607c3f1e8b962745df5ee";
@@ -52,7 +52,7 @@ class TagDisplay extends Component {
     return (
       <div>
         {this.state ? <h2>Frequently Tagged As</h2> : ''}
-        {this.state ?
+        {/* {this.state ?
           <Treemap
             data={this.state.data}
             title={'Top Tags'}
@@ -68,7 +68,7 @@ class TagDisplay extends Component {
                     color: 'black'}}
           />
           : ''
-        }
+        } */}
       </div>
     );
   }
