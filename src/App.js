@@ -23,7 +23,7 @@ class App extends Component {
           <div className="jumbotron">
                 <div className="container-fluid">
                     <img src={logo}/>
-                    <h1>Spotify Web App</h1>
+                    <h1> Spotify Stats</h1>
                 </div>
           </div>
           <Switch>

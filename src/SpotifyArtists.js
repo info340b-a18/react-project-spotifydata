@@ -4,6 +4,7 @@ import 'react-tabulator/lib/css/tabulator.min.css'; // theme
 import { ReactTabulator } from 'react-tabulator';
 import { Button, Table } from 'reactstrap';
 import {Bar} from 'react-chartjs-2';
+import FooterPage from './FooterPage';
 
 class SpotifyArtists extends Component {
     
@@ -26,18 +27,19 @@ class SpotifyArtists extends Component {
 
     render() {
         if (this.props.accessToken == undefined) {
-            var heading = <h1>Please login with Spotify first</h1>
+            var heading = <h1 className="login">Please login with Spotify first.</h1>
         } else {
             var heading = <h1>Click to see your top artists!</h1>
         }
         return(
-            <div>
+            <div className="main-container">
                 {this.state.artistButtonClicked == false &&
                 heading}
                 {this.state.artistButtonClicked == true &&
                 <ArtistTable artistTableData={this.artistTableData}></ArtistTable>}
                 {this.state.artistTablePresent == false && this.props.accessToken != undefined &&
                 <Button color='primary' onClick={()=> this.artistButtonClick()}>Top Artists</Button>} {' '}
+                <FooterPage />
             </div>
         )
     }

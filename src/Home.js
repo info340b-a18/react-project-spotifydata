@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import FooterPage from './FooterPage'
 import image from './img/spotify-music.jpg';
 
 
 export class Home extends Component {
     render() {
         return (
-            <div>
+            <div className="main-container">
                 <div className="container-fluid">
                     <div className="row">
                             <div className="col-xl-5 spotify-img">
@@ -26,8 +27,9 @@ export class Home extends Component {
                             </div>
                     </div>
                 </div>
+                <br />
                 <div className="container-fluid">
-                <div className="row Applications">
+                <div>
                         <h2>Applications</h2>
                         <ul>
                             <div className="col-sm">
@@ -63,7 +65,7 @@ export class Home extends Component {
                 </div>
             </div>
             <div>
-                <section className="further-links" id="further-link">
+                <section className="further-links container-fluid" id="further-link">
                     <h2 className="card-title">Further Links and Resources</h2>
                     <li>
                         <a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>
@@ -76,11 +78,7 @@ export class Home extends Component {
                     </li>
                 </section>
             </div>
-            <footer>
-                <p>Posted by: Chai Gangavarapu</p>
-                <p>Contact information: <a href="mailto:chaitanya.gangavarapu@gmail.com">
-                chaitanya.gangavarapu@gmail.com</a>.</p>
-            </footer>
+            <FooterPage />
         </div>
         )
     }

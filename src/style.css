@@ -1,6 +1,31 @@
-html {
+* {
     box-sizing: border-box;
 }
+   
+*:before,
+*:after {
+    box-sizing: border-box;
+}
+   
+html,
+body {
+    height: 100%;
+    position: relative;
+}
+
+body {
+    border: 1px solid transparent;
+    background: linear-gradient(to bottom,black,  black);
+}
+
+.main-container {
+    min-height: 100vh; /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 100px; /* height of your footer */
+}
+
 .navbar a:hover {
     background-color: #84bd00;
 }
@@ -10,14 +35,12 @@ nav {
 
 }
 
+.nav-link {
+    cursor: pointer;
+}
 
 #root {
     color: white;
-    background: linear-gradient(to bottom,black,  #212121)
-}
-
-body {
-    border: 1px solid transparent;
 }
 
 .flex-container {
@@ -30,12 +53,12 @@ body {
 }
 
 .jumbotron {
-   background: linear-gradient(to bottom,black, black)
+   background: linear-gradient(to bottom,black, black);
+   margin-bottom: 0;
 }
 
-.Applications h2, .further-links h2 {
-    font-style: italic;
-    margin-left: 30px;
+ul {
+    padding-left: 20px;
 }
 
 .further-links li {
@@ -47,6 +70,15 @@ body {
 }
 
 footer {
-    margin-left: 30px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    max-height: 150px;
 }
+
+.login {
+    padding-left: 20px;
+}
+
+
 
