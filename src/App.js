@@ -7,6 +7,7 @@ import SpotifyArtists from './SpotifyArtists'
 import Nav from './Nav'
 import UserProfile from './UserProfile'
 
+
 class App extends Component { 
   constructor(props) {
     super(props);
