@@ -16,6 +16,7 @@ body {
 body {
     border: 1px solid transparent;
     background: linear-gradient(to bottom,black,  black);
+    padding-bottom: 150px;
 }
 
 .main-container {
@@ -73,7 +74,8 @@ footer {
     width: 100%;
     position: absolute;
     bottom: 0;
-    max-height: 150px;
+    height: 100px;
+    left: 0;
 }
 
 .login {
