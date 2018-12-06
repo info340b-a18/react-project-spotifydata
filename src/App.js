@@ -6,6 +6,9 @@ import SpotifySongs from './SpotifySongs'
 import SpotifyArtists from './SpotifyArtists'
 import Nav from './Nav'
 import UserProfile from './UserProfile'
+import Firebase from './Firebase'
+import 'firebase/auth'; 
+import 'firebase/database';
 
 
 class App extends Component { 
@@ -32,6 +35,7 @@ class App extends Component {
             <Route path="/Spotify/Artists" render={() => <SpotifyArtists accessToken={this.state.accessToken}/>}/>
             <Route path="/Home" component={Home}/>
             <Route path="/UserProfile" render={() => <UserProfile accessToken={this.state.accessToken}/>}/>
+            <Route path="/Firebase" component={Firebase}/>
             <Route path="/" component={Home}/>
           </Switch>
         </div>

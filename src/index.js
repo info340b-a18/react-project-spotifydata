@@ -16,8 +16,8 @@ var config = {
     storageBucket: "stage4-info340.appspot.com",
     messagingSenderId: "692235007256"
   };
-  //firebase.initializeApp(config);
+  firebase.initializeApp(config);
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App/>, document.getElementById('root'));
 
 
