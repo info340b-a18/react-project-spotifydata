@@ -77,33 +77,49 @@ class TagDisplay extends Component {
 // Renders list of similar tracks
 // expected props: track name, artist, viewTrack callback func
 class SimilarTrackDisplay extends Component {
+  componentDidMount() {
+    this.getAJAX();
+  }
+
   componentDidUpdate(prevProps) {
     if (this.props.track !== prevProps.track || this.props.artist !== prevProps.artist) {
       this.getAJAX();
     }
   }
 
-  getAJAX() {
-    fetch(BASE_URL + "track.getsimilar&artist=" + this.props.artist + "&track=" + this.props.track +
-          "&format=json&autocorrect=1&api_key=" + API_KEY)
-      .then(response => response.json())
-      .then(data => this.process(data),
-            error => console.error(error));
+  async getAJAX() {
+    let artist = await fetch(BASE_URL + "artist.getcorrection&artist=" + this.props.artist +
+            "&format=json&api_key=" + API_KEY)
+          .then(response => response.json())
+          .then(data => {
+            return (data.corrections.correction ? data.corrections.correction.artist.name : this.props.artist);
+          });
+
+    fetch(BASE_URL + "track.getsimilar&artist=" + artist + "&track=" + this.props.track +
+            "&format=json&autocorrect=1&api_key=" + API_KEY)
+          .then(response => response.json())
+          .then(data => this.process(data));
   }
 
   process(data) {
-    data = data.similartracks.track;
-    let newData = data.map(track => {
-      let img = track.image.filter(img => {return img.size === 'medium'})[0]['#text'];
+    if (data.error) {
+      this.setState({error: data.message});
+    } else if (data.similartracks.track.length === 0) {
+      this.setState({error: 'No similar tracks found'});
+    } else {
+      data = data.similartracks.track;
+      let newData = data.map(track => {
+        let img = track.image.filter(img => {return img.size === 'medium'})[0]['#text'];
 
-      return {name: track.name,
-              match: track.match,
-              playcount: track.playcount,
-              artist: track.artist.name,
-              img: img};
-    });
+        return {name: track.name,
+                match: track.match,
+                playcount: track.playcount,
+                artist: track.artist.name,
+                img: img};
+      });
 
-    this.setState({similarTracks: newData});
+      this.setState({similarTracks: newData, error: null});
+    }
   }
 
   setSort(event) {
@@ -113,6 +129,14 @@ class SimilarTrackDisplay extends Component {
 
   render() {
     if (this.state) {
+      if (this.state.error) {
+        return (
+          <div>
+            {this.state.error}
+          </div>
+        )
+      }
+
       let tracks = this.state.similarTracks;
 
       if (this.state.sort) {
@@ -122,7 +146,7 @@ class SimilarTrackDisplay extends Component {
       }
 
       tracks = tracks.map(track => {
-        return <SimilarTrack key={track.name + "-" + track.artist} viewTrack={this.props.viewTrack}
+        return <SimilarTrack key={track.name + "-" + track.artist}
                 name={track.name} artist={track.artist} img={track.img} playcount={track.playcount}
                 match={track.match} />
       });
@@ -148,7 +172,7 @@ class SimilarTrackDisplay extends Component {
 class SimilarTrack extends Component {
   render() {
     return (
-      <div onClick={e => this.props.viewTrack(this.props.name, this.props.artist)}>
+      <div>
         <img src={this.props.img} alt={this.props.name}/>
         <h5>{this.props.name + " by " + this.props.artist}</h5>
       </div>

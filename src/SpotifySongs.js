@@ -62,11 +62,10 @@ class SpotifySongs extends Component {
 
 class SongChart extends Component {
     render() {
-        console.log(this.state);
         let labels = [];
         let ratings = [];
         this.props.songChartData.forEach((song) => {
-            labels.push(song.name + ' - ' + song.artists[0].name)
+            labels.push(song.name + ' * ' + song.artists[0].name)
             ratings.push(song.popularity)
         });
         var data =  {
@@ -98,7 +97,7 @@ class SongChart extends Component {
 
     handleClick = (event, elements) => {
         if (elements.length !== 0) {
-            let data = elements[0]['_view'].label.split(' - ');
+            let data = elements[0]['_view'].label.split(' * ');
             this.setState({track: data[0], artist: data[1]});
         }
     }
