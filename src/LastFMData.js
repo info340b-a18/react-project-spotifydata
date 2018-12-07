@@ -19,6 +19,7 @@ class SimilarTrackDisplay extends Component {
   }
 
   async getAJAX() {
+    this.setState({loading: true});
     let artist = await fetch(BASE_URL + "artist.getcorrection&artist=" + this.props.artist +
             "&format=json&api_key=" + API_KEY)
           .then(response => response.json())
@@ -51,6 +52,7 @@ class SimilarTrackDisplay extends Component {
 
       this.setState({similarTracks: newData, error: null});
     }
+    this.setState({loading: false});
   }
 
   setSort(event) {
@@ -64,8 +66,15 @@ class SimilarTrackDisplay extends Component {
   }
 
   render() {
-    console.log(this.props.uid);
     if (this.state) {
+      if (this.state.loading) {
+        return (
+          <div className="text-center">
+              <i className="fa fa-spinner fa-spin fa-3x" aria-label="Connecting..."></i>
+          </div>
+        );
+      }
+
       if (this.state.error) {
         return (
           <div className="container mx-auto">

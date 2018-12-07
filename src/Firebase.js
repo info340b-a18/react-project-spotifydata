@@ -103,7 +103,7 @@ class Firebase extends Component {
     }
 
     return (
-      <div>
+      <div className="container mx-auto">
         {this.state.errorMessage &&
           <p className="alert alert-danger">{this.state.errorMessage}</p>}
         {content}
