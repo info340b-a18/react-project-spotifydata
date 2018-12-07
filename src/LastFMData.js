@@ -199,14 +199,13 @@ class SimilarTrack extends Component {
   render() {
     return (
         <div className="col-sm-3">
-          <div className="card bg-dark text-white">
-            <img className="card-img-top" src={this.props.img} alt={this.props.name}/>
-              <div className="card-body">
-            
-                <h5 className="card-title">{this.props.name + " by " + this.props.artist}</h5>
-                <p className="card-text">Playcount: {this.props.playcount}</p>
-            </div>
+        <div className="card bg-dark text-white">
+          <img className="card-img-top" src={this.props.img} alt={this.props.name}/>
+            <div className="card-body">
+              <h5 className="card-title">{this.props.name + " by " + this.props.artist}</h5>
+              <p className="card-text">Playcount: {this.props.playcount}</p>
           </div>
+        </div>
         </div>
     )
   }
