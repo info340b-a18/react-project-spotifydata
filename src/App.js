@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
-import {HashRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import {BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import SpotifySongs from './SpotifySongs'
 import SpotifyArtists from './SpotifyArtists'
 import Nav from './Nav'
@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router>
+      <Router basename="/react-project-spotifydata">
         <div>
           <Nav authorize={this.authorize} />
           <Switch>
@@ -59,9 +59,10 @@ class App extends Component {
   }
 
   authorize() {
-    let baseUri = "https://info340b-a18.github.io/react-project-spotifydata/";
+    let baseUri = "https://info340b-a18.github.io/react-project-spotifydata";
+    let localhost = "http://localhost:3000/react-project-spotifydata"
     var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=" +
-      baseUri + "#/UserProfile";
+      baseUri + "/UserProfile";
     window.location = loginQuery;
   }
 
