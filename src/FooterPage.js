@@ -8,8 +8,8 @@ class FooterPage extends React.Component {
             <Container fluid className="text-center text-md-left">
                 <Row>
                     <Col md="6">
-                        <h5 className="title">Posted By:</h5>
-                        <p>Chai Gangavarapu</p>
+                        <h5 className="title">Made By:</h5>
+                        <p>Chai Gangavarapu, Kyler Sakumoto, Ash Israni, Brandon Hong</p>
                     </Col>
                     <Col md="6">
                         <h5 className="title">Contact Information:</h5>

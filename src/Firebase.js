@@ -21,7 +21,6 @@ class Firebase extends Component {
 
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        return user.updateProfile({})
       }).catch((err) => {
         this.setState({errorMessage: err.message});
       })

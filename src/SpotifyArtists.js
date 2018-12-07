@@ -16,7 +16,7 @@ class SpotifyArtists extends Component {
 
     render() {
         if (this.props.accessToken == undefined) {
-            var heading = <h1 className="login">Please login with Spotify first.</h1>
+            var heading = <h1 className="headings">Please login with Spotify first.</h1>
         } else {
             var heading = <h1>Click to see your top artists!</h1>
         }
@@ -102,7 +102,7 @@ class Artists extends Component {
                 </div>
                 </div>
                 }
-                <h1>Your Top Artists!</h1>
+                <h1 className="headings">Your Top Artists!</h1>
                 <div className="container">
                     <div className="row">
                         <div className="card-columns">

@@ -27,9 +27,9 @@ class SpotifySongs extends Component {
     render() {
         console.log('SpotifySongs: ' + this.props.uid);
         if (this.props.accessToken == undefined) {
-            var heading = <h1 className="login">Please login with Spotify first.</h1>
+            var heading = <h1 className="login headings">Please login with Spotify first.</h1>
         } else {
-            var heading = <h1>Click to see your top songs!</h1>
+            var heading = ""
         }
         return(
             <div className="main-container">
@@ -56,7 +56,6 @@ class SpotifySongs extends Component {
             this.setState({songChartPresent: true});
         }
     }
-
 }
 
 class SongChart extends Component {
