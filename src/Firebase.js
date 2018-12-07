@@ -89,7 +89,14 @@ class Firebase extends Component {
       );
     } else {
       content = (
-        <button onClick={e => this.handleSignOut(e)}>Sign Out</button>
+        <div className="container">
+          <div className="row">
+            <button className="btn btn-primary bg-success border-success" onClick={this.props.authorize}>Connect to Spotify</button>
+          </div>
+          <div className="row">
+            <button className="btn btn-primary" onClick={e => this.handleSignOut(e)}>Sign Out</button>
+          </div>
+        </div>
       )
     }
 

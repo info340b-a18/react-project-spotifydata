@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 
-export class Nav extends Component {
+class Nav extends Component {
     render() {
       return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
@@ -19,20 +19,12 @@ export class Nav extends Component {
                     <Link className="nav-link" to='/UserProfile'>User Profile</Link>
                   </li>
                   <li className="nav-item">
-                    <a className="nav-link" onClick={this.authorize}>Spotify Login</a>
-                  </li>
-                  <li className="nav-item">
                     <Link className="nav-link" to='/Firebase'>Login / Logout</Link>
                   </li>
               </ul>
           </div> 
           </nav>
       );
-    }
-  
-    authorize() {
-      var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=http://localhost:3000";
-      window.location = loginQuery;
     }
 }
 
