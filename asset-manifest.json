@@ -1,7 +1,7 @@
 {
   "main.css": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css",
-  "main.js": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js",
-  "main.js.map": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js.map",
+  "main.js": "/react-project-spotifydata/static/js/main.3517757f.chunk.js",
+  "main.js.map": "/react-project-spotifydata/static/js/main.3517757f.chunk.js.map",
   "static/css/1.a3fd3f3a.chunk.css": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css",
   "static/js/1.9721a5fd.chunk.js": "/react-project-spotifydata/static/js/1.9721a5fd.chunk.js",
   "static/js/1.9721a5fd.chunk.js.map": "/react-project-spotifydata/static/js/1.9721a5fd.chunk.js.map",
@@ -13,6 +13,6 @@
   "static/css/main.9600a3c6.chunk.css.map": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css.map",
   "static/css/1.a3fd3f3a.chunk.css.map": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css.map",
   "index.html": "/react-project-spotifydata/index.html",
-  "precache-manifest.36ff0b31dc684c293542ad86c9f2429a.js": "/react-project-spotifydata/precache-manifest.36ff0b31dc684c293542ad86c9f2429a.js",
+  "precache-manifest.48432301dbc0a260cd6123bf8e3f4795.js": "/react-project-spotifydata/precache-manifest.48432301dbc0a260cd6123bf8e3f4795.js",
   "service-worker.js": "/react-project-spotifydata/service-worker.js"
 }

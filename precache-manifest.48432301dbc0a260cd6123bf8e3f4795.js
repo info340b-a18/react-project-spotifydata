@@ -1,10 +1,10 @@
 self.__precacheManifest = [
   {
-    "revision": "a990f611f2305dc12965f186c2ef2690",
-    "url": "/react-project-spotifydata/static/media/Roboto-Light.a990f611.eot"
+    "revision": "4d9f3f9e5195e7b074bb63ba4ce42208",
+    "url": "/react-project-spotifydata/static/media/Roboto-Medium.4d9f3f9e.eot"
   },
   {
-    "revision": "48eeea40017735b8ce5b",
+    "revision": "3517757fb999bf587463",
     "url": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css"
   },
   {
@@ -32,12 +32,12 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
-    "revision": "674f50d287a8c48dc19ba404d20fe713",
-    "url": "/react-project-spotifydata/static/media/fontawesome-webfont.674f50d2.eot"
-  },
-  {
     "revision": "b06871f281fee6b241d60582ae9369b9",
     "url": "/react-project-spotifydata/static/media/fontawesome-webfont.b06871f2.ttf"
+  },
+  {
+    "revision": "674f50d287a8c48dc19ba404d20fe713",
+    "url": "/react-project-spotifydata/static/media/fontawesome-webfont.674f50d2.eot"
   },
   {
     "revision": "912ec66d7572ff821749319396470bde",
@@ -52,6 +52,10 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/arrow_right.8ef6a08c.svg"
   },
   {
+    "revision": "a990f611f2305dc12965f186c2ef2690",
+    "url": "/react-project-spotifydata/static/media/Roboto-Light.a990f611.eot"
+  },
+  {
     "revision": "dfe56a876d0282555d1e2458e278060f",
     "url": "/react-project-spotifydata/static/media/Roboto-Thin.dfe56a87.eot"
   },
@@ -60,16 +64,12 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Regular.30799efa.eot"
   },
   {
-    "revision": "4d9f3f9e5195e7b074bb63ba4ce42208",
-    "url": "/react-project-spotifydata/static/media/Roboto-Medium.4d9f3f9e.eot"
-  },
-  {
     "revision": "ecdd509cadbf1ea78b8d2e31ec52328c",
     "url": "/react-project-spotifydata/static/media/Roboto-Bold.ecdd509c.eot"
   },
   {
-    "revision": "48eeea40017735b8ce5b",
-    "url": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js"
+    "revision": "3517757fb999bf587463",
+    "url": "/react-project-spotifydata/static/js/main.3517757f.chunk.js"
   },
   {
     "revision": "954bbdeb86483e4ffea00c4591530ece",
@@ -92,24 +92,28 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Bold.39b2c303.woff2"
   },
   {
-    "revision": "ba3dcd8903e3d0af5de7792777f8ae0d",
-    "url": "/react-project-spotifydata/static/media/Roboto-Regular.ba3dcd89.woff"
+    "revision": "3b813c2ae0d04909a33a18d792912ee7",
+    "url": "/react-project-spotifydata/static/media/Roboto-Light.3b813c2a.woff"
   },
   {
     "revision": "fc78759e93a6cac50458610e3d9d63a0",
     "url": "/react-project-spotifydata/static/media/Roboto-Medium.fc78759e.woff"
   },
   {
-    "revision": "3b813c2ae0d04909a33a18d792912ee7",
-    "url": "/react-project-spotifydata/static/media/Roboto-Light.3b813c2a.woff"
+    "revision": "ba3dcd8903e3d0af5de7792777f8ae0d",
+    "url": "/react-project-spotifydata/static/media/Roboto-Regular.ba3dcd89.woff"
+  },
+  {
+    "revision": "7500519de3d82e33d1587f8042e2afcb",
+    "url": "/react-project-spotifydata/static/media/Roboto-Thin.7500519d.woff"
   },
   {
     "revision": "dc81817def276b4f21395f7ea5e88dcd",
     "url": "/react-project-spotifydata/static/media/Roboto-Bold.dc81817d.woff"
   },
   {
-    "revision": "7500519de3d82e33d1587f8042e2afcb",
-    "url": "/react-project-spotifydata/static/media/Roboto-Thin.7500519d.woff"
+    "revision": "46e48ce0628835f68a7369d0254e4283",
+    "url": "/react-project-spotifydata/static/media/Roboto-Light.46e48ce0.ttf"
   },
   {
     "revision": "df7b648ce5356ea1ebce435b3459fd60",
@@ -124,15 +128,11 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
-    "revision": "46e48ce0628835f68a7369d0254e4283",
-    "url": "/react-project-spotifydata/static/media/Roboto-Light.46e48ce0.ttf"
-  },
-  {
     "revision": "9721a5fdc5a9dc963421",
     "url": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css"
   },
   {
-    "revision": "e3896799c722cbb55293b12c65413fe1",
+    "revision": "eb5c4e5763c018b0043e994bc0feda20",
     "url": "/react-project-spotifydata/index.html"
   }
 ];
