@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+
 class SignUpForm extends Component {
   constructor(props){
     super(props);
@@ -22,7 +23,6 @@ class SignUpForm extends Component {
   //handle signUp button
   handleSignUp(event) {
     event.preventDefault(); //don't submit
-    let avatar = this.state.avatar || 'img/no-user-pic.png'; //default to local pic
     this.props.signUpCallback(this.state.email, this.state.password);
   }
 
@@ -31,6 +31,14 @@ class SignUpForm extends Component {
     event.preventDefault(); //don't submit
     this.props.signInCallback(this.state.email, this.state.password);
   }
+
+  handleSignOut(event) {
+    event.preventDefault(); 
+    this.props.signOutCallback();
+  }
+
+  
+  
 
   render() {
     return (
@@ -50,14 +58,12 @@ class SignUpForm extends Component {
         <div className="form-group">
           <label htmlFor="password">Password</label>
           <input className="form-control" 
-            id="password" 
+            id ="password"
             type="password"
             name="password"
             onChange={(e) => this.handleChange(e)}
             />
         </div>
-
-    
 
        
 
@@ -72,6 +78,10 @@ class SignUpForm extends Component {
             onClick={(e) => this.handleSignIn(e)}
           >
             Sign-in
+          </button>
+          <button className="btn btn-primary"
+            onClick={(e) => this.handleSignOut(e)}
+          > Sign-Out 
           </button>
         </div>
       </form>

@@ -167,7 +167,7 @@ class SimilarTrackDisplay extends Component {
                   <option value="playcount">Most Played</option>
                 </select>
               </div>
-              <label className="col-form-label" for="show">Sort by:</label>
+              <label className="col-form-label" for="show">Show:</label>
               <div className="col">
                 <select className="form-control" id="show" name="show" onChange={e => this.setShow(e)}>
                   <option value={10}>10</option>
