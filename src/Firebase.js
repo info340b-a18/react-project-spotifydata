@@ -54,8 +54,10 @@ class Firebase extends Component {
     this.authFunction = firebase.auth().onAuthStateChanged((fireUser) => {
       if (fireUser) {
         this.setState({user: fireUser});
+        this.props.uidCallback(fireUser.uid);
       } else {
         this.setState({user: null});
+        this.props.uidCallback(null);
       }
       this.setState({loading: false});
     });

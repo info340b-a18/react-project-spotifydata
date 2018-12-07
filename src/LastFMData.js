@@ -132,6 +132,7 @@ class SimilarTrackDisplay extends Component {
   }
 
   render() {
+    console.log(this.props.uid);
     if (this.state) {
       if (this.state.error) {
         return (
@@ -152,7 +153,7 @@ class SimilarTrackDisplay extends Component {
       tracks = tracks.slice(0, this.state.show ? this.state.show : 10);
 
       tracks = tracks.map(track => {
-        return <SimilarTrack key={track.name + "-" + track.artist}
+        return <SimilarTrack key={track.name + "-" + track.artist} uid={this.props.uid}
                 name={track.name} artist={track.artist} img={track.img} playcount={track.playcount}
                 match={track.match} />
       });
@@ -201,6 +202,7 @@ class SimilarTrackDisplay extends Component {
 // expected props: track name, artist, playcount, match, image src (String), viewTrack callback func
 class SimilarTrack extends Component {
   render() {
+    console.log(this.props.uid);
     return (
         <div className="col-sm-3">
         <div className="card bg-dark text-white">
@@ -208,7 +210,7 @@ class SimilarTrack extends Component {
             <div className="card-body">
               <h5 className="card-title">{this.props.name + " by " + this.props.artist}</h5>
               <p className="card-text">Playcount: {this.props.playcount}</p>
-              <button class="btn btn-primary" aria-label="Like"  onClick={this.sendData(this.props.name, this.props.artist)}>
+              <button class="btn btn-primary" aria-label="Like"  onClick={() => this.sendData()}>
                     <i class="fa fa-heart" aria-hidden="true"></i>
                 </button>
           </div>
@@ -217,12 +219,15 @@ class SimilarTrack extends Component {
     )
   }
 
-  sendData(name, artist) { 
-    firebase.database().ref('SongLikes/').set({
-      name:name, 
-      artist:artist
+  sendData() {
+    console.log(this.props.artist + ' - ' + this.props.name);
+    let tmp = localStorage.getItem('uid');
+    console.log(tmp);
+    firebase.database().ref(tmp + '/likes').push({
+      name: this.props.name,
+      artist: this.props.artist
     });
-    console.log("done")
+    console.log("done");
   }
 }
 
