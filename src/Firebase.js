@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import SignUpForm from './SignUpForm';
 import firebase from 'firebase/app';
+import { BrowserRouter as Router, Route, Link, Switch, Redirect} from 'react-router-dom'
+
+import UserProfile from './UserProfile'
 
 
 // add loading variable
@@ -21,6 +24,7 @@ class Firebase extends Component {
     
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
+        //  this.user = user
         return user.updateProfile({
             
         }).catch((err) => 
@@ -35,21 +39,37 @@ class Firebase extends Component {
   handleSignIn(email, password) {
     this.setState({errorMessage:null}); //clear any old errors
 
-    /* TODO: sign in user here */
-    firebase.auth().signInWithEmailAndPassword(email, password)
-    .catch(error => this.setState({errorMessage: error.message})
-    );
+   firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
+      alert("Successful Sign In")
+      return <Route exact path="/" render={() => (
+          <Redirect to="./UserProfile"/>
+      )}/>
+   }).catch(function(error) {
+    var errorCode = error.code;
+    var errorMessage = error.message;
+
+    if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+    } else {
+        alert(errorMessage);         
+    }
+    
+    });
+    
+
   }
 
   //A callback function for logging out the current user
-  handleSignOut(){
+  handleSignOut(email,password) {
     this.setState({errorMessage:null}); //clear any old errors
 
-    /* TODO: sign out user here */
-    firebase.auth().signOut()
-    .catch(error => this.setState({errorMessage: error.message})
+    firebase.auth().signOut().then(function(user) {
+        alert("Successful Sign Out") 
+    }).catch(error => this.setState({errorMessage: error.message})
     );
+    
   }
+
 
   // add component did mount
   componentDidMount() {
@@ -88,7 +108,9 @@ class Firebase extends Component {
           <h1>Sign Up</h1>
           <SignUpForm 
             signUpCallback={(e,p) => this.handleSignUp(e,p)} 
-            signInCallback={(e,p) => this.handleSignIn(e,p)} 
+            signInCallback={(e,p) => this.handleSignIn(e,p)}
+            signOutCallback={(e,p) => this.handleSignOut()} 
+
             />
         </div>
       );
