@@ -4,6 +4,7 @@ import 'react-tabulator/lib/css/tabulator.min.css'; // theme
 import { ReactTabulator } from 'react-tabulator';
 import { Button, Table } from 'reactstrap';
 import {Bar} from 'react-chartjs-2';
+import FooterPage from './FooterPage';
 
 class UserProfile extends Component {
     
@@ -15,13 +16,14 @@ class UserProfile extends Component {
 
     render() {
         if (this.userTableData.length == 0) {
-            var userTable = <h1>Please login first</h1>
+            var userTable = <h1 className="login">Please login with Spotify first.</h1>
         } else {
             var userTable =  <UserTable userTableData={this.userTableData}></UserTable>    
         }
         return(
-            <div>
+            <div className="main-container">
                 {userTable}
+                <FooterPage />
             </div>
         )
     }

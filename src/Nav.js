@@ -5,8 +5,8 @@ export class Nav extends Component {
     render() {
       return (
         <nav className="navbar navbar-expand-sm bg-dark navbar-dark fixed-top">
-          <Link className="nav-link" to='/Home'>Spotify Web App</Link>
-          {/* <a className="navbar-brand" href="index.html">Spotify Web App</a> */}
+          <Link className="nav-link" to='/Home'>Spotify Stats</Link>
+          {/* <a className="navbar-brand" href="index.html">Spotify Stats</a> */}
           <div className="navbar-nav" id="navlinks">
               <ul className="navbar-nav">
                   <li className="nav-item">
