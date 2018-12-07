@@ -1,18 +1,18 @@
 {
   "main.css": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css",
-  "main.js": "/react-project-spotifydata/static/js/main.ae24adbc.chunk.js",
-  "main.js.map": "/react-project-spotifydata/static/js/main.ae24adbc.chunk.js.map",
+  "main.js": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js",
+  "main.js.map": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js.map",
   "static/css/1.a3fd3f3a.chunk.css": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css",
   "static/js/1.9721a5fd.chunk.js": "/react-project-spotifydata/static/js/1.9721a5fd.chunk.js",
   "static/js/1.9721a5fd.chunk.js.map": "/react-project-spotifydata/static/js/1.9721a5fd.chunk.js.map",
   "runtime~main.js": "/react-project-spotifydata/static/js/runtime~main.925a1c56.js",
   "runtime~main.js.map": "/react-project-spotifydata/static/js/runtime~main.925a1c56.js.map",
-  "static/media/mdb.css": "/react-project-spotifydata/static/media/Roboto-Thin.94998475.ttf",
+  "static/media/mdb.css": "/react-project-spotifydata/static/media/Roboto-Bold.e31fcf18.ttf",
   "static/media/spotify-music.jpg": "/react-project-spotifydata/static/media/spotify-music.432e53cc.jpg",
-  "static/media/font-awesome.min.css": "/react-project-spotifydata/static/media/fontawesome-webfont.fee66e71.woff",
+  "static/media/font-awesome.min.css": "/react-project-spotifydata/static/media/fontawesome-webfont.af7ae505.woff2",
   "static/css/main.9600a3c6.chunk.css.map": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css.map",
   "static/css/1.a3fd3f3a.chunk.css.map": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css.map",
   "index.html": "/react-project-spotifydata/index.html",
-  "precache-manifest.94121b5fed405c3b41490ff837c63875.js": "/react-project-spotifydata/precache-manifest.94121b5fed405c3b41490ff837c63875.js",
+  "precache-manifest.36ff0b31dc684c293542ad86c9f2429a.js": "/react-project-spotifydata/precache-manifest.36ff0b31dc684c293542ad86c9f2429a.js",
   "service-worker.js": "/react-project-spotifydata/service-worker.js"
 }

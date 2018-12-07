@@ -4,12 +4,12 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Light.a990f611.eot"
   },
   {
-    "revision": "ae24adbc5024d8778b4b",
+    "revision": "48eeea40017735b8ce5b",
     "url": "/react-project-spotifydata/static/css/main.9600a3c6.chunk.css"
   },
   {
-    "revision": "94998475f6aea65f558494802416c1cf",
-    "url": "/react-project-spotifydata/static/media/Roboto-Thin.94998475.ttf"
+    "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
+    "url": "/react-project-spotifydata/static/media/Roboto-Bold.e31fcf18.ttf"
   },
   {
     "revision": "9721a5fdc5a9dc963421",
@@ -24,12 +24,12 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/spotify-music.432e53cc.jpg"
   },
   {
-    "revision": "fee66e712a8a08eef5805a46892932ad",
-    "url": "/react-project-spotifydata/static/media/fontawesome-webfont.fee66e71.woff"
-  },
-  {
     "revision": "af7ae505a9eed503f8b8e6982036873e",
     "url": "/react-project-spotifydata/static/media/fontawesome-webfont.af7ae505.woff2"
+  },
+  {
+    "revision": "fee66e712a8a08eef5805a46892932ad",
+    "url": "/react-project-spotifydata/static/media/fontawesome-webfont.fee66e71.woff"
   },
   {
     "revision": "674f50d287a8c48dc19ba404d20fe713",
@@ -68,8 +68,12 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Bold.ecdd509c.eot"
   },
   {
-    "revision": "ae24adbc5024d8778b4b",
-    "url": "/react-project-spotifydata/static/js/main.ae24adbc.chunk.js"
+    "revision": "48eeea40017735b8ce5b",
+    "url": "/react-project-spotifydata/static/js/main.48eeea40.chunk.js"
+  },
+  {
+    "revision": "954bbdeb86483e4ffea00c4591530ece",
+    "url": "/react-project-spotifydata/static/media/Roboto-Thin.954bbdeb.woff2"
   },
   {
     "revision": "69f8a0617ac472f78e45841323a3df9e",
@@ -80,48 +84,44 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/media/Roboto-Regular.2751ee43.woff2"
   },
   {
-    "revision": "39b2c3031be6b4ea96e2e3e95d307814",
-    "url": "/react-project-spotifydata/static/media/Roboto-Bold.39b2c303.woff2"
-  },
-  {
     "revision": "574fd0b50367f886d359e8264938fc37",
     "url": "/react-project-spotifydata/static/media/Roboto-Medium.574fd0b5.woff2"
   },
   {
-    "revision": "3b813c2ae0d04909a33a18d792912ee7",
-    "url": "/react-project-spotifydata/static/media/Roboto-Light.3b813c2a.woff"
-  },
-  {
-    "revision": "fc78759e93a6cac50458610e3d9d63a0",
-    "url": "/react-project-spotifydata/static/media/Roboto-Medium.fc78759e.woff"
-  },
-  {
-    "revision": "954bbdeb86483e4ffea00c4591530ece",
-    "url": "/react-project-spotifydata/static/media/Roboto-Thin.954bbdeb.woff2"
-  },
-  {
-    "revision": "dc81817def276b4f21395f7ea5e88dcd",
-    "url": "/react-project-spotifydata/static/media/Roboto-Bold.dc81817d.woff"
+    "revision": "39b2c3031be6b4ea96e2e3e95d307814",
+    "url": "/react-project-spotifydata/static/media/Roboto-Bold.39b2c303.woff2"
   },
   {
     "revision": "ba3dcd8903e3d0af5de7792777f8ae0d",
     "url": "/react-project-spotifydata/static/media/Roboto-Regular.ba3dcd89.woff"
   },
   {
-    "revision": "7500519de3d82e33d1587f8042e2afcb",
-    "url": "/react-project-spotifydata/static/media/Roboto-Thin.7500519d.woff"
+    "revision": "fc78759e93a6cac50458610e3d9d63a0",
+    "url": "/react-project-spotifydata/static/media/Roboto-Medium.fc78759e.woff"
   },
   {
-    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
-    "url": "/react-project-spotifydata/static/media/Roboto-Medium.894a2ede.ttf"
+    "revision": "3b813c2ae0d04909a33a18d792912ee7",
+    "url": "/react-project-spotifydata/static/media/Roboto-Light.3b813c2a.woff"
+  },
+  {
+    "revision": "dc81817def276b4f21395f7ea5e88dcd",
+    "url": "/react-project-spotifydata/static/media/Roboto-Bold.dc81817d.woff"
+  },
+  {
+    "revision": "7500519de3d82e33d1587f8042e2afcb",
+    "url": "/react-project-spotifydata/static/media/Roboto-Thin.7500519d.woff"
   },
   {
     "revision": "df7b648ce5356ea1ebce435b3459fd60",
     "url": "/react-project-spotifydata/static/media/Roboto-Regular.df7b648c.ttf"
   },
   {
-    "revision": "e31fcf1885e371e19f5786c2bdfeae1b",
-    "url": "/react-project-spotifydata/static/media/Roboto-Bold.e31fcf18.ttf"
+    "revision": "94998475f6aea65f558494802416c1cf",
+    "url": "/react-project-spotifydata/static/media/Roboto-Thin.94998475.ttf"
+  },
+  {
+    "revision": "894a2ede85a483bf9bedefd4db45cdb9",
+    "url": "/react-project-spotifydata/static/media/Roboto-Medium.894a2ede.ttf"
   },
   {
     "revision": "46e48ce0628835f68a7369d0254e4283",
@@ -132,7 +132,7 @@ self.__precacheManifest = [
     "url": "/react-project-spotifydata/static/css/1.a3fd3f3a.chunk.css"
   },
   {
-    "revision": "cf9e5cd642c5cf55f85c4395e29cd3cf",
+    "revision": "e3896799c722cbb55293b12c65413fe1",
     "url": "/react-project-spotifydata/index.html"
   }
 ];
