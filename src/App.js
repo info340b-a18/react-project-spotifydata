@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './img/spotify.png';
 import Home from './Home';
 import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import SpotifySongs from './SpotifySongs'
@@ -24,12 +23,6 @@ class App extends Component {
       <Router>
         <div>
           <Nav></Nav>
-          <div className="jumbotron">
-                <div className="container-fluid">
-                    <img src={logo}/>
-                    <h1> Spotify Stats</h1>
-                </div>
-          </div>
           <Switch>
             <Route path="/Spotify/Songs" render={() => <SpotifySongs accessToken={this.state.accessToken}/>}/>
             <Route path="/Spotify/Artists" render={() => <SpotifyArtists accessToken={this.state.accessToken}/>}/>
