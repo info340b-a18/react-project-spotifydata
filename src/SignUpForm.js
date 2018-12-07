@@ -32,14 +32,6 @@ class SignUpForm extends Component {
     this.props.signInCallback(this.state.email, this.state.password);
   }
 
-  handleSignOut(event) {
-    event.preventDefault(); 
-    this.props.signOutCallback();
-  }
-
-  
-  
-
   render() {
     return (
       <form>
@@ -65,8 +57,6 @@ class SignUpForm extends Component {
             />
         </div>
 
-       
-
         {/* buttons */}
         <div className="form-group">
           <button className="btn btn-primary mr-2" 
@@ -78,10 +68,6 @@ class SignUpForm extends Component {
             onClick={(e) => this.handleSignIn(e)}
           >
             Sign-in
-          </button>
-          <button className="btn btn-primary"
-            onClick={(e) => this.handleSignOut(e)}
-          > Sign-Out 
           </button>
         </div>
       </form>

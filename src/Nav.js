@@ -22,8 +22,8 @@ export class Nav extends Component {
                     <a className="nav-link" onClick={this.authorize}>Spotify Login</a>
                   </li>
                   <li className="nav-item">
-                    <Link className="nav-link" to='/Firebase'>Login to WebApp</Link>
-                  </li>  
+                    <Link className="nav-link" to='/Firebase'>Login / Logout</Link>
+                  </li>
               </ul>
           </div> 
           </nav>

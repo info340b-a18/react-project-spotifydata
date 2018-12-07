@@ -19,17 +19,9 @@ class Firebase extends Component {
   handleSignUp(email, password) {
     this.setState({errorMessage:null}); //clear any old errors
 
-    /* TODO: sign up user here */
-
-    
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then((user) => {
-        //  this.user = user
-        return user.updateProfile({
-            
-        }).catch((err) => 
-        this.setState({ errorMessage: err.message})
-        )
+        return user.updateProfile({})
       }).catch((err) => {
         this.setState({errorMessage: err.message});
       })
@@ -39,35 +31,21 @@ class Firebase extends Component {
   handleSignIn(email, password) {
     this.setState({errorMessage:null}); //clear any old errors
 
-   firebase.auth().signInWithEmailAndPassword(email, password).then(function(user) {
-      alert("Successful Sign In")
-      return <Route exact path="/" render={() => (
-          <Redirect to="./UserProfile"/>
-      )}/>
-   }).catch(function(error) {
-    var errorCode = error.code;
-    var errorMessage = error.message;
-
-    if (errorCode === 'auth/wrong-password') {
-        alert('Wrong password.');
-    } else {
-        alert(errorMessage);         
-    }
-    
-    });
-    
-
+    firebase.auth().signInWithEmailAndPassword(email, password)
+      .then(user => {
+        console.log(user);
+      })
+      .catch((err) => {
+        this.setState({errorMessage: err.message});
+      })
   }
 
   //A callback function for logging out the current user
-  handleSignOut(email,password) {
+  handleSignOut(event) {
     this.setState({errorMessage:null}); //clear any old errors
 
-    firebase.auth().signOut().then(function(user) {
-        alert("Successful Sign Out") 
-    }).catch(error => this.setState({errorMessage: error.message})
-    );
-    
+    firebase.auth().signOut()
+      .catch(error => this.setState({errorMessage: error.message}));
   }
 
 
@@ -76,9 +54,7 @@ class Firebase extends Component {
     this.authFunction = firebase.auth().onAuthStateChanged((fireUser) => {
       if (fireUser) {
         this.setState({user: fireUser});
-        //window.location =
-      }
-      else {
+      } else {
         this.setState({user: null});
       }
       this.setState({loading: false});
@@ -90,8 +66,7 @@ class Firebase extends Component {
   }
 
   render() {
-
-    let content=null; //content to render
+    let content = null; //content to render
 
     // add the loading
     if (this.state.loading) {
@@ -102,24 +77,26 @@ class Firebase extends Component {
       );
     }
 
-   // if(!this.state.user) { //if logged out, show signup form
+    if(!this.state.user) { //if logged out, show signup form
       content = (
         <div className="container">
-          <h1>Sign Up</h1>
+          <h1>Sign Up / Sign In</h1>
           <SignUpForm 
             signUpCallback={(e,p) => this.handleSignUp(e,p)} 
             signInCallback={(e,p) => this.handleSignIn(e,p)}
-            signOutCallback={(e,p) => this.handleSignOut()} 
-
-            />
+          />
         </div>
       );
-  //  } 
+    } else {
+      content = (
+        <button onClick={e => this.handleSignOut(e)}>Sign Out</button>
+      )
+    }
+
     return (
       <div>
         {this.state.errorMessage &&
-          <p className="alert alert-danger">{this.state.errorMessage}</p>
-        }
+          <p className="alert alert-danger">{this.state.errorMessage}</p>}
         {content}
       </div>
     );

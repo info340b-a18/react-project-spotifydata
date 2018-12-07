@@ -35,7 +35,7 @@ class App extends Component {
             <Route path="/Spotify/Artists" render={() => <SpotifyArtists accessToken={this.state.accessToken}/>}/>
             <Route path="/Home" component={Home}/>
             <Route path="/UserProfile" render={() => <UserProfile accessToken={this.state.accessToken}/>}/>
-            <Route path="/Firebase" component={Firebase}/>
+            <Route path="/Firebase" component={Firebase} />
             <Route path="/" component={Home}/>
           </Switch>
         </div>
