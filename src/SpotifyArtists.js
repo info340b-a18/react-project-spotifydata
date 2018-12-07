@@ -18,7 +18,7 @@ class SpotifyArtists extends Component {
         if (this.props.accessToken == undefined) {
             var heading = <h1 className="headings">Please login with Spotify first.</h1>
         } else {
-            var heading = <h1>Click to see your top artists!</h1>
+            var heading = ''
         }
         return(
             <div className="main-container">
