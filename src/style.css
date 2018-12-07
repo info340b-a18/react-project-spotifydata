@@ -28,7 +28,19 @@ body {
     padding-bottom: 100px; /* height of your footer */
 }
 
-.navbar a:hover {
+
+/* Nav Styles */
+#banner-text {
+    font-size: 1.2em;
+}
+
+#nav-logo{
+    max-width: 30px;
+    max-height: 30px;
+    margin-right: 10px;
+}
+
+.nav-item:hover {
     background-color: #84bd00;
 }
 
@@ -49,17 +61,12 @@ nav {
     flex-direction: column;
 }
 
-.jumbotron h1{
-    display: inline;
-}
-
-.jumbotron {
-   background: linear-gradient(to bottom,black, black);
-   margin-bottom: 0;
-}
-
 ul {
-    padding-left: 20px;
+    padding-left: 10px;
+}
+
+h3 a {
+    color: white;
 }
 
 .further-links li {

@@ -1,97 +1,93 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import FooterPage from './FooterPage'
 import image from './img/spotify-music.jpg';
-import logo from './img/spotify.png';
-
-
 
 export class Home extends Component {
-    render() {
-        return (
-            <div>
-                <div className="jumbotron">
-                    <div className="container-fluid">
-                        <img src={logo}/>
-                        <h1> Spotify Stats</h1>
-                    </div>
-                </div>
-                <div className="main-container">
-                    <div className="container-fluid">
-                        <div className="row">
-                                <div className="col-xl-5 spotify-img">
-                                    <img className="img-fluid" src={image}/>
-                                </div>
-                                <div className="col-xl-7 overview">
-                                    <h2>Topic Overview</h2>
-                                    <p>
-                                        The topic domain I’m most interested in pursuing is music. I really would like to do something related to someone’s Spotify user history whether, it would be like the memories function on Snapchat or a web app for suggesting new music. 
-                                        I feel like there are a lot of options that you can get into with this domain and its something I find really interesting.
-                                        Additionally, there are a lot of possible music api's that can be used here whether that be Spotify or something else. It would be very effective to combine a few of these into a web app.
+	render() {
+		return (
+				<div className="main-container">
+          <div className="container-fluid">
+						<div className="row align-items-center">
+							<div className="col-xl-5 align-middle spotify-img">
+								<img className="img-fluid" src={image} />
+							</div>
+              <div className="w-100 d-xl-none"></div>
+							<div className="col-xl-7 overview">
+								<h2>Why Music?</h2>
+								<p>
+									The topic domain I’m most interested in pursuing is music. I really would like to do something related to someone’s Spotify user history whether, it would be like the memories function on Snapchat or a web app for suggesting new music.
+									I feel like there are a lot of options that you can get into with this domain and its something I find really interesting.
+									Additionally, there are a lot of possible music api's that can be used here whether that be Spotify or something else. It would be very effective to combine a few of these into a web app.
+                </p>
+								<p>
+									The creation of apps in this space could be really beneficial,
+									because almost everyone listens to some sort of music and I’m sure people would be able to benefit from any additional music or any insights that can be gained from their music history.
+									Right now there are some ways to get new music selections, but I would like to further customize this process by allowing the user of the app to input any information for the search. From genre, to artists, I would like to use the users Spotify history if possible as well.
+                </p>
+							</div>
+						</div>
+					</div>
+
+					<br />
+
+					<div className="container-fluid">
+              <h2 className="mx-auto">Site Overview</h2>
+							<ul>
+								<div className="col-sm">
+									<h3>
+                    <Link to="/UserProfile">User Profile</Link>
+                  </h3>
+									<p>
+										This section displays overview of your Spotify profile, complete with a list of tracks you've liked. This profile displays your name,
+										number of followers, link to your profile, profile picture, and most importantly all of the tracks you've liked within the app.
                                     </p>
-                                    <p>
-                                        The creation of apps in this space could be really beneficial, 
-                                        because almost everyone listens to some sort of music and I’m sure people would be able to benefit from any additional music or any insights that can be gained from their music history. 
-                                        Right now there are some ways to get new music selections, but I would like to further customize this process by allowing the user of the app to input any information for the search. From genre, to artists, I would like to use the users Spotify history if possible as well.
-                                    </p>
-                                </div>
-                        </div>
-                    </div>
-                    <br />
-                    <div className="container-fluid">
-                    <div>
-                            <h2>Applications</h2>
-                            <ul>
-                                <div className="col-sm">
-                                    <h3>
-                                        Profile Overview 
-                                    </h3>
-                                    <p>
-                                        This section will allow you to login via Spotify and then see an overview of your profile. This overview will include your name, 
-                                        number of followers, link to your profile, and profile picture. 
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <h3>
-                                        Top Artists 
-                                    </h3>
-                                    <p>
-                                        This section will allow you to display your top 10 artists on spotify based on prior listening, their popularity rating on a scale from 1-100, and 
-                                        a link to their profile. The headers of each column are interactible, so you can click the popularity header to sort your top artists from low to high 
-                                        or high to low popularity. 
-                                    </p>
-                                </div>
-                                <div className="col-sm">
-                                    <h3>
-                                        Top Songs 
-                                    </h3>
-                                    <p>
-                                        This section will allow you to display your top 10 songs on spotify in the form of a bar chart. When you hover over any bar in the chart it will show you
-                                        the name of the song and its popularity indexed by spotify. 
-                                    </p>
-                                    
-                                </div>
-                            </ul>
-                    </div>
-                </div>
-                <div>
-                    <section className="further-links container-fluid" id="further-link">
-                        <h2 className="card-title">Further Links and Resources</h2>
-                        <li>
-                            <a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>
-                        </li>
-                        <li>
-                            <a href="https://developer.spotify.com/community/showcase/">Showcase of Spotify Web App Ideas</a>
-                        </li>
-                        <li>
-                            <a href="https://musicmachinery.com/music-apis/">Different Useful Music Api's Aside From Spotify</a>
-                        </li>
-                    </section>
-                </div>
-                <FooterPage />
-            </div>
-        </div>
-        )
-    }
+								</div>
+								<div className="col-sm">
+									<h3>
+										<Link to='/Spotify/Artists'>Top Artists</Link>
+                  </h3>
+									<p>
+										This section displays your top 10 artists on Spotify based on prior listening, their popularity rating on a scale from 1-100, and
+										a link to their profile. The headers of each column are interactible, so you can click the popularity header to sort your top artists from low to high
+										or high to low popularity.
+                  </p>
+								</div>
+								<div className="col-sm">
+                <h3>
+                <Link to='/Spotify/Songs'>Top Songs</Link>
+                </h3>
+                <p>
+										This section displays your top 10 songs on Spotify in a bar chart that displays each song's overall popularity, as indexed by Spotify. Hovering over
+										each song displays the track name and popularity index. Click on each song to get similar songs, generated by the Last.FM API listening data. Up to
+										100 similar songs can be found, and can be sorted by closest match or overall plays. Like any song to add it to your user profile!
+                </p>
+
+								</div>
+							</ul>
+					</div>
+        
+          <br />
+
+					<div>
+						<section className="further-links container-fluid" id="further-link">
+							<h4 className="card-title">Further Links and Resources</h4>
+							<li>
+								<a href="https://developer.spotify.com/documentation/web-api/">Spotify API</a>
+							</li>
+							<li>
+								<a href="https://developer.spotify.com/community/showcase/">Showcase of Spotify Web App Ideas</a>
+							</li>
+							<li>
+								<a href="https://musicmachinery.com/music-apis/">Different Useful Music Api's Aside From Spotify</a>
+							</li>
+						</section>
+					</div>
+					<FooterPage />
+				
+			</div>
+		)
+	}
 }
 
 export default Home;
