@@ -59,7 +59,7 @@ class App extends Component {
   }
 
   authorize() {
-    let baseUri = "http://localhost:3000";
+    let baseUri = "https://info340b-a18.github.io/react-project-spotifydata";
     var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=" +
       baseUri + "/UserProfile";
     window.location = loginQuery;
