@@ -19,8 +19,6 @@ class App extends Component {
   }
 
   render() {
-    console.log('App state:');
-    console.log(this.state);
     return (
       <Router>
         <div>
@@ -71,7 +69,6 @@ class App extends Component {
     // Had to use local storage due to state being lost on Spotify authentication redirect
     // Best workaround
     localStorage.setItem('uid', uid);
-    console.log('set uid: ' + uid);
   }
 }
 

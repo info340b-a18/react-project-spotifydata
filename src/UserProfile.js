@@ -25,10 +25,9 @@ class UserProfile extends Component {
 
 
     render() {
-        console.log(this.state.userLikes);
         var likes = "";
         if (this.userTableData.length == 0) {
-            var userTable = <h1 className="login">Please login with Spotify first.</h1>
+            var userTable = <h1 className="headings">Please login with Spotify first.</h1>
         } else {
             var userTable =  <UserTable userTableData={this.userTableData}></UserTable>    
         }
@@ -37,19 +36,18 @@ class UserProfile extends Component {
                 return <LikeCard like={like}></LikeCard>
             })
         }
-        console.log(likes);
         
         return(
             <div className="main-container">
                 {userTable}
                 {this.state.userLikes.length != 0 && 
                 <div>
-                    <h1>Your Likes:</h1>
+                    <h1 className="headings">Your Likes:</h1>
                     {likes}
                 </div>
                 }
                 {this.state.userLikes.length == 0 &&
-                <h1>You have no liked songs! Go like some</h1>
+                <h1 className="headings">You have no liked songs! Go like some</h1>
                 }
                 <FooterPage />
                 
@@ -59,6 +57,9 @@ class UserProfile extends Component {
 
     showLikes() {
         let uid = localStorage.getItem('uid');
+        if (uid === null) {
+            return [];
+        }
         let task = "";
         firebase.database().ref(uid).once('value').then(function(snapshot) {
             if (snapshot.val() == null) {
@@ -72,9 +73,7 @@ class UserProfile extends Component {
             })
             return taskArr
         }).then((taskArr) => {
-            console.log(taskArr);
             taskArr = _.uniqWith(taskArr, _.isEqual);
-            console.log(taskArr);
             this.setState({userLikes: taskArr})
         });
     }
@@ -107,7 +106,7 @@ class LikeCard extends Component {
             <div className="col-sm">
             <div className="card bg-dark text-white">
                 <div className="card-body">
-                  <h5 className="card-title">{this.props.like.name}{" by "}{this.props.like.artist}</h5>
+                  <h5 className="card-title">{this.props.like.name}{" - "}{this.props.like.artist}</h5>
               </div>
             </div>
             </div>

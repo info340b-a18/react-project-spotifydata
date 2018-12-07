@@ -48,10 +48,8 @@ export class Home extends Component {
 										<Link to='/Spotify/Artists'>Top Artists</Link>
                   </h3>
 									<p>
-										This section displays your top 10 artists on Spotify based on prior listening, their popularity rating on a scale from 1-100, and
-										a link to their profile. The headers of each column are interactible, so you can click the popularity header to sort your top artists from low to high
-										or high to low popularity.
-                  </p>
+										This section displays your top 10 artists on Spotify based on prior listening. From there you can see all of an artists top albums, and listen to these on Spotify!
+                                    </p>
 								</div>
 								<div className="col-sm">
                 <h3>
