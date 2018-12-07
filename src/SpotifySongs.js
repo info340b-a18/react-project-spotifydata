@@ -25,6 +25,7 @@ class SpotifySongs extends Component {
     }
 
     render() {
+        console.log('SpotifySongs: ' + this.props.uid);
         if (this.props.accessToken == undefined) {
             var heading = <h1 className="login">Please login with Spotify first.</h1>
         } else {
@@ -33,7 +34,7 @@ class SpotifySongs extends Component {
         return(
             <div className="main-container">
                 {this.songChartData.length == 0 && heading}
-                {this.songChartData.length != 0 && <SongChart songChartData={this.songChartData}></SongChart>}
+                {this.songChartData.length != 0 && <SongChart songChartData={this.songChartData} uid={this.props.uid} />}
                 <FooterPage />
             </div>
         )
@@ -60,6 +61,7 @@ class SpotifySongs extends Component {
 
 class SongChart extends Component {
     render() {
+        console.log('SongChart: ' + this.props.uid);
         let labels = [];
         let ratings = [];
         this.props.songChartData.forEach((song) => {
@@ -105,7 +107,7 @@ class SongChart extends Component {
                 <h4>Click a song to discover similar tracks</h4>
                 <Bar data={data} options={options} />
                 {this.state ?
-                <SimilarTrackDisplay track={this.state.track} artist={this.state.artist} />
+                <SimilarTrackDisplay uid={this.props.uid} track={this.state.track} artist={this.state.artist} />
                 : ''}
             </div>
         )   

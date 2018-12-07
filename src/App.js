@@ -19,16 +19,18 @@ class App extends Component {
   }
 
   render() {
+    console.log('App state:');
+    console.log(this.state);
     return (
       <Router>
         <div>
           <Nav authorize={this.authorize} />
           <Switch>
-            <Route path="/Spotify/Songs" render={() => <SpotifySongs accessToken={this.state.accessToken}/>}/>
+            <Route path="/Spotify/Songs" render={() => <SpotifySongs accessToken={this.state.accessToken} uid={this.props.uid} />}/>
             <Route path="/Spotify/Artists" render={() => <SpotifyArtists accessToken={this.state.accessToken}/>}/>
             <Route path="/Home" component={Home}/>
             <Route path="/UserProfile" render={() => <UserProfile accessToken={this.state.accessToken}/>}/>
-            <Route path="/Firebase" render={() => <Firebase authorize={() => this.authorize()} />} />
+            <Route path="/Firebase" render={() => <Firebase authorize={() => this.authorize()} uidCallback={uid => this.setUid(uid)}/>} />
             <Route path="/" component={Home}/>
           </Switch>
         </div>
@@ -63,6 +65,13 @@ class App extends Component {
     var loginQuery = "https://accounts.spotify.com/authorize?client_id=f09bc8aafe37492495c170958f4282f5&response_type=token&scope=user-top-read&show_dialog=true&redirect_uri=" +
       baseUri + "/UserProfile";
     window.location = loginQuery;
+  }
+
+  setUid(uid) {
+    // Had to use local storage due to state being lost on Spotify authentication redirect
+    // Best workaround
+    localStorage.setItem('uid', uid);
+    console.log('set uid: ' + uid);
   }
 }
 
