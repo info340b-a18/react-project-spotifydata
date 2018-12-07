@@ -8,6 +8,8 @@ import FooterPage from './FooterPage';
 import firebase from 'firebase/app';
 import 'firebase/auth'; 
 import 'firebase/database';
+import _ from 'lodash';
+
 
 class UserProfile extends Component {
     
@@ -19,7 +21,6 @@ class UserProfile extends Component {
         }
         this.userTableData = [];
         this.showLikes();
-       
     }
 
 
@@ -33,7 +34,6 @@ class UserProfile extends Component {
         }
         if (this.state.userLikes.length != 0) {
             likes = this.state.userLikes.map((like) => {
-                console.log(like);
                 return <LikeCard like={like}></LikeCard>
             })
         }
@@ -48,6 +48,9 @@ class UserProfile extends Component {
                     {likes}
                 </div>
                 }
+                {this.state.userLikes.length == 0 &&
+                <h1>You have no liked songs! Go like some</h1>
+                }
                 <FooterPage />
                 
             </div>
@@ -58,6 +61,9 @@ class UserProfile extends Component {
         let uid = localStorage.getItem('uid');
         let task = "";
         firebase.database().ref(uid).once('value').then(function(snapshot) {
+            if (snapshot.val() == null) {
+                return [];
+            }
             snapshot = snapshot.val().likes; 
             let taskKeys = Object.keys(snapshot);
             let taskArr = taskKeys.map((key) => { //map array of keys into array of tasks
@@ -66,6 +72,9 @@ class UserProfile extends Component {
             })
             return taskArr
         }).then((taskArr) => {
+            console.log(taskArr);
+            taskArr = _.uniqWith(taskArr, _.isEqual);
+            console.log(taskArr);
             this.setState({userLikes: taskArr})
         });
     }
@@ -94,7 +103,6 @@ class UserProfile extends Component {
 
 class LikeCard extends Component {
     render() {
-        console.log(this.props.like);
         return(
             <div className="col-sm">
             <div className="card bg-dark text-white">
