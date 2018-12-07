@@ -116,11 +116,12 @@ class Artists extends Component {
 
     albumCards = (albumData, artistName) => {
         this.albumData = [];
-        // albumData = albumData.items;
-        // console.log(albumData);
-        // albumData = _.uniqBy(albumData, "albumData.name");
+        albumData = albumData.items;
+        albumData = _.uniqBy(albumData, (album) => {
+            return album.name;
+        });
         console.log(albumData);
-        albumData.items.map((album) => {
+        albumData.map((album) => {
             this.albumData.push(album);
             this.setState({albumArtistName: artistName});
         })
@@ -135,6 +136,7 @@ class AlbumCard extends Component {
                 <img className="card-img-top" src={this.props.album.images[0].url} alt={this.props.album.name}/>
                     <div className="card-body">
                     <h5 className="card-title">{this.props.album.name}{" - "}{this.props.album.album_group}</h5>
+                    <a href={this.props.album.uri} className="card-link">View on Spotify</a>
                 </div>
                 </div>
             </div>
