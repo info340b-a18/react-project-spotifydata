@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-
+import firebase from 'firebase/app';
+import 'firebase/auth'; 
+import 'firebase/database';
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/?method=";
 const API_KEY = "d07648f4e1a607c3f1e8b962745df5ee";
 
@@ -181,9 +183,11 @@ class SimilarTrackDisplay extends Component {
           <div className="container">
             <div className="row">
               <div className="card-deck">
-                {tracks}
+                {tracks} 
+              
               </div>
             </div>
+            
           </div>
         </div>
       );
@@ -204,11 +208,25 @@ class SimilarTrack extends Component {
             <div className="card-body">
               <h5 className="card-title">{this.props.name + " by " + this.props.artist}</h5>
               <p className="card-text">Playcount: {this.props.playcount}</p>
+              <button class="btn btn-primary" aria-label="Like"  onClick={this.sendData(this.props.name, this.props.artist)}>
+                    <i class="fa fa-heart" aria-hidden="true"></i>
+                </button>
           </div>
         </div>
         </div>
     )
   }
+
+  sendData(name, artist) { 
+    firebase.database().ref('SongLikes/').set({
+      name:name, 
+      artist:artist
+    });
+    console.log("done")
+  }
 }
+
+
+
 
 export { TagDisplay, SimilarTrackDisplay };
