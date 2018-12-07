@@ -121,21 +121,20 @@ class UserTable extends Component {
     }
 
     render() {
+        let data = this.props.userTableData[0];
         return(
-            <div>
-                <h1>Spotify User Data Table</h1>
-                <ReactTabulator
-                columns={
-                    [ //Define Table Columns
-                        {title:"Name", field:"display_name", width:150},
-                        {title:"Followers", field:"followers.total", align:"left"},
-                        {title:"Link to Profile", field:"uri", formatter:"link"}, 
-                        {title:"Picture", field:"images", formatter:"image"}
-                        
-                    ]
-                }
-                data={this.props.userTableData}
-                />
+            <div className="container-fluid">
+                <h1>Spotify Profile</h1>
+                <div className="row">
+                    <div className="col-3">
+                        <img src={data.images} />
+                    </div>
+                    <div className="col-7s">
+                        <h2 className="display-4">{data.display_name}</h2>
+                        <h3>Followers: {data.followers.total}</h3>
+                        <h3><a href={data.uri}>Open Profile</a></h3>
+                    </div>
+                </div>
             </div>
         )
     }
