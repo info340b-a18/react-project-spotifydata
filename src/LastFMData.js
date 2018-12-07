@@ -5,74 +5,6 @@ import 'firebase/database';
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/?method=";
 const API_KEY = "d07648f4e1a607c3f1e8b962745df5ee";
 
-// Renders treemap of popular tags
-// expected props: track name, artist
-class TagDisplay extends Component {
-  componentDidUpdate(prevProps) {
-    if (this.props.track !== prevProps.track || this.props.artist !== prevProps.artist) {
-      this.getAJAX();
-    }
-  }
-
-  getAJAX() {
-    fetch(BASE_URL + "track.gettoptags&artist=" + this.props.artist + "&track=" + this.props.track +
-          "&format=json&autocorrect=1&api_key=" + API_KEY)
-      .then(response => response.json())
-      .then(data => this.process(data),
-            error => console.error(error));
-  }
-
-  process(data) {
-    data = data.toptags;
-
-    let children = data.tag.slice(0, 10).map(tag => {
-      return {title: tag.name,
-              size: tag.count,
-              color: '#f6b342'}
-    });
-    
-    if (children.length === 0) {
-      children = [
-        {title: 'No User Generated Tags', size: 70, color: '#FF6666'},
-        {title: data['@attr'].track, size: 20, color: '#FFA0A0'},
-        {title: data['@attr'].artist, size: 20, color: '#FFA0A0'}
-      ];
-    }
-
-    this.setState({
-      data: {
-        color: '#29b6f6',
-        children: children
-      }
-    });
-  }
-
-  render() {
-    return (
-      <div>
-        {this.state ? <h2>Frequently Tagged As</h2> : ''}
-        {/* {this.state ?
-          <Treemap
-            data={this.state.data}
-            title={'Top Tags'}
-            mode={'circlePack'}
-            // renderMode={'SVG'}
-            width={600}
-            height={600}
-            padding={6}
-            colorType={'literal'}
-            animation={{damping: 9,
-                        stiffness: 300}}
-            style={{border:'2px solid black',
-                    color: 'black'}}
-          />
-          : ''
-        } */}
-      </div>
-    );
-  }
-}
-
 // Renders list of similar tracks
 // expected props: track name, artist, viewTrack callback func
 class SimilarTrackDisplay extends Component {
@@ -87,6 +19,7 @@ class SimilarTrackDisplay extends Component {
   }
 
   async getAJAX() {
+    this.setState({loading: true});
     let artist = await fetch(BASE_URL + "artist.getcorrection&artist=" + this.props.artist +
             "&format=json&api_key=" + API_KEY)
           .then(response => response.json())
@@ -119,6 +52,7 @@ class SimilarTrackDisplay extends Component {
 
       this.setState({similarTracks: newData, error: null});
     }
+    this.setState({loading: false});
   }
 
   setSort(event) {
@@ -132,12 +66,21 @@ class SimilarTrackDisplay extends Component {
   }
 
   render() {
-    console.log(this.props.uid);
     if (this.state) {
+      if (this.state.loading) {
+        return (
+          <div className="text-center">
+              <i className="fa fa-spinner fa-spin fa-3x" aria-label="Connecting..."></i>
+          </div>
+        );
+      }
+
       if (this.state.error) {
         return (
-          <div>
+          <div className="container mx-auto">
+          <div className="alert alert-danger">
             {this.state.error}
+          </div>
           </div>
         )
       }
@@ -234,4 +177,4 @@ class SimilarTrack extends Component {
 
 
 
-export { TagDisplay, SimilarTrackDisplay };
+export { SimilarTrackDisplay };
