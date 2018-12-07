@@ -14,7 +14,6 @@ class SpotifySongs extends Component {
         super(props);
         this.state = {
             songChartPresent: false,
-            songButtonClicked: false,
         }
         this.songChartData = [];
         this.songButtonClick = this.songButtonClick.bind(this);
@@ -33,12 +32,8 @@ class SpotifySongs extends Component {
         }
         return(
             <div className="main-container">
-                {this.state.songButtonClicked == false &&
-                heading}
-                {this.state.songButtonClicked == true &&
-                <SongChart songChartData={this.songChartData} ></SongChart>}
-                {this.state.songChartPresent == false && this.props.accessToken != undefined &&
-                <Button color='primary' onClick={()=> this.songButtonClick()}>Top Songs</Button>} {' '}
+                {this.songChartData.length == 0 && heading}
+                {this.songChartData.length != 0 && <SongChart songChartData={this.songChartData}></SongChart>}
                 <FooterPage />
             </div>
         )
@@ -57,6 +52,7 @@ class SpotifySongs extends Component {
                     this.songChartData.push(song);
                 })
             })
+            this.setState({songChartPresent: true});
         }
     }
 

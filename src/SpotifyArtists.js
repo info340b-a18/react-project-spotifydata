@@ -10,19 +10,8 @@ class SpotifyArtists extends Component {
     
     constructor(props) {
         super(props);
-        this.state = {
-            userTablePresent: false,
-            artistTablePresent: false,
-            artistButtonClicked: false
-        }
-        this.userTableData = [];
+        this.state = {artistTablePresent: false}
         this.artistTableData = [];
-        this.artistButtonClick = this.artistButtonClick.bind(this);
-    }
-
-    artistButtonClick() {
-        this.setState({artistButtonClicked: true});
-        this.setState({artistTablePresent: true});
     }
 
     render() {
@@ -33,12 +22,8 @@ class SpotifyArtists extends Component {
         }
         return(
             <div className="main-container">
-                {this.state.artistButtonClicked == false &&
-                heading}
-                {this.state.artistButtonClicked == true &&
-                <ArtistTable artistTableData={this.artistTableData}></ArtistTable>}
-                {this.state.artistTablePresent == false && this.props.accessToken != undefined &&
-                <Button color='primary' onClick={()=> this.artistButtonClick()}>Top Artists</Button>} {' '}
+                {this.artistTableData.length == 0 && heading}
+                {this.artistTableData.length != 0 && <ArtistTable artistTableData={this.artistTableData}></ArtistTable>}
                 <FooterPage />
             </div>
         )
@@ -58,6 +43,7 @@ class SpotifyArtists extends Component {
                 })
             });
         }
+        this.setState({artistTablePresent: true})
     }
 
 }
