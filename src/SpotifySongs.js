@@ -65,7 +65,7 @@ class SongChart extends Component {
         let labels = [];
         let ratings = [];
         this.props.songChartData.forEach((song) => {
-            labels.push(song.name + ' * ' + song.artists[0].name)
+            labels.push(song.name + ' | ' + song.artists[0].name)
             ratings.push(song.popularity)
         });
         var data =  {
@@ -82,11 +82,29 @@ class SongChart extends Component {
             onClick: this.handleClick,
             legend: {
                 display: false
+            },
+            scales: {
+                xAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Top 10 Songs'
+                    },
+                    ticks: {
+                        display: false
+                    }
+                }],
+                yAxes: [{
+                    scaleLabel: {
+                        display: true,
+                        labelString: 'Spotify Popularity Index'
+                    }
+                }]
             }
         };
         return (
             <div>
-                <h1>Your Top 10 Songs!</h1>
+                <h1>Your Top 10 Most Played Songs!</h1>
+                <h4>Click a song to discover similar tracks</h4>
                 <Bar data={data} options={options} />
                 {this.state ?
                 <SimilarTrackDisplay track={this.state.track} artist={this.state.artist} />
@@ -97,7 +115,7 @@ class SongChart extends Component {
 
     handleClick = (event, elements) => {
         if (elements.length !== 0) {
-            let data = elements[0]['_view'].label.split(' * ');
+            let data = elements[0]['_view'].label.split(' | ');
             this.setState({track: data[0], artist: data[1]});
         }
     }

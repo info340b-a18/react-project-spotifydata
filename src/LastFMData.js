@@ -1,8 +1,5 @@
 import React, { Component } from 'react';
 
-// import {Treemap} from 'react-vis';
-// import '../node_modules/react-vis/dist/style.css';
-
 const BASE_URL = "https://ws.audioscrobbler.com/2.0/?method=";
 const API_KEY = "d07648f4e1a607c3f1e8b962745df5ee";
 
@@ -109,7 +106,7 @@ class SimilarTrackDisplay extends Component {
     } else {
       data = data.similartracks.track;
       let newData = data.map(track => {
-        let img = track.image.filter(img => {return img.size === 'medium'})[0]['#text'];
+        let img = track.image.filter(img => {return img.size === 'large'})[0]['#text'];
 
         return {name: track.name,
                 match: track.match,
@@ -125,6 +122,11 @@ class SimilarTrackDisplay extends Component {
   setSort(event) {
     event.preventDefault();
     this.setState({sort: event.target.value});
+  }
+
+  setShow(event) {
+    event.preventDefault();
+    this.setState({show: event.target.value});
   }
 
   render() {
@@ -145,6 +147,8 @@ class SimilarTrackDisplay extends Component {
         });
       }
 
+      tracks = tracks.slice(0, this.state.show ? this.state.show : 10);
+
       tracks = tracks.map(track => {
         return <SimilarTrack key={track.name + "-" + track.artist}
                 name={track.name} artist={track.artist} img={track.img} playcount={track.playcount}
@@ -153,12 +157,34 @@ class SimilarTrackDisplay extends Component {
 
       return (
         <div>
-          <h2>Similar Tracks</h2>
-          <select name="sort" onChange={e => this.setSort(e)}>
-            <option value="match">Similarity</option>
-            <option value="playcount">Most Played</option>
-          </select>
-          {tracks}
+          <div className="container">
+            <h2>Similar Tracks</h2>
+            <div className="form-group row">
+              <label className="col-form-label" for="sort">Sort by:</label>
+              <div className="col">
+                <select className="form-control col" id="sort" name="sort" onChange={e => this.setSort(e)}>
+                  <option value="match">Similarity</option>
+                  <option value="playcount">Most Played</option>
+                </select>
+              </div>
+              <label className="col-form-label" for="show">Sort by:</label>
+              <div className="col">
+                <select className="form-control" id="show" name="show" onChange={e => this.setShow(e)}>
+                  <option value={10}>10</option>
+                  <option value={25}>25</option>
+                  <option value={100}>100</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <div className="container">
+            <div className="row">
+              <div className="card-deck">
+                {tracks}
+              </div>
+            </div>
+          </div>
         </div>
       );
     } else {
@@ -172,10 +198,16 @@ class SimilarTrackDisplay extends Component {
 class SimilarTrack extends Component {
   render() {
     return (
-      <div>
-        <img src={this.props.img} alt={this.props.name}/>
-        <h5>{this.props.name + " by " + this.props.artist}</h5>
-      </div>
+        <div className="col-sm-3">
+        <div className="card bg-dark text-white">
+          <img className="card-img-top" src={this.props.img} alt={this.props.name}/>
+            <div className="card-body">
+          
+              <h5 className="card-title">{this.props.name + " by " + this.props.artist}</h5>
+              <p className="card-text">Playcount: {this.props.playcount}</p>
+          </div>
+        </div>
+        </div>
     )
   }
 }
