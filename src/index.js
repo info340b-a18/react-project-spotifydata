@@ -10,6 +10,8 @@ import App from './App';
 import firebase from 'firebase/app';
 import 'firebase/auth'; 
 import 'firebase/database';
+import { BrowserRouter as Router, Route, Link, Switch, HashRouter} from 'react-router-dom'
+
 
 var config = {
     apiKey: "AIzaSyCMzMlN46xKhXyyHLIbF5gMQiJ5zGopkkM",
@@ -20,7 +22,6 @@ var config = {
     messagingSenderId: "692235007256"
   };
   firebase.initializeApp(config);
-
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<HashRouter basename="/react-project-spotifydata">(<App/>)</HashRouter>, document.getElementById('root'));
 
 

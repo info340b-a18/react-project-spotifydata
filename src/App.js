@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Home from './Home';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Link, Switch, HashRouter} from 'react-router-dom'
 import SpotifySongs from './SpotifySongs'
 import SpotifyArtists from './SpotifyArtists'
 import Nav from './Nav'
