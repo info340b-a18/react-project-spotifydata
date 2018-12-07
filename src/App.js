@@ -20,7 +20,7 @@ class App extends Component {
 
   render() {
     return (
-      <Router basename="/react-project-spotifydata">
+      <Router>
         <div>
           <Nav authorize={this.authorize} />
           <Switch>
